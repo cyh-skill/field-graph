@@ -26,10 +26,23 @@ and `jq`.
 
 ## Use with Claude Code
 
-Claude Code compatibility is provided by `.claude-plugin/plugin.json`; the
-manifest points to the repository-root `SKILL.md`. Clone the repository and load
-it through your existing Claude Code plugin workflow. The same scripts, provider
-limits, public-data scope, and safety rules apply in both clients.
+Install as a personal Skill:
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+gh repo clone cyh-skill/field-graph ~/.claude/skills/cyh-field-graph
+```
+
+Or install the plugin from this repository's marketplace:
+
+```text
+/plugin marketplace add cyh-skill/field-graph
+/plugin install field-graph@field-graph
+```
+
+For local development, `claude --plugin-dir /absolute/path/to/field-graph` loads it
+directly. The same scripts, provider limits, public-data scope, and safety rules
+apply in both clients.
 
 Invoke a personal Skill as `/cyh-field-graph`; when installed as the bundled
 plugin, use `/field-graph:cyh-field-graph`.

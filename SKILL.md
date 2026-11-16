@@ -24,11 +24,21 @@ Turn "who actually matters in field X" from a guess into a sourced, ranked graph
 This Skill supports both Codex and Claude Code. In Codex, invoke it as
 `$cyh-field-graph`; install the repository as `cyh-field-graph` under
 `~/.agents/skills/`, with `agents/openai.yaml` providing Codex interface metadata.
-Claude Code uses `.claude-plugin/plugin.json` and the `allowed-tools` frontmatter
-above. Both clients follow the same workflow and safety boundaries. The method is
+In Claude Code, install it as a personal Skill under `~/.claude/skills/cyh-field-graph`
+(`/cyh-field-graph`) or as the `field-graph` plugin (`/field-graph:cyh-field-graph`);
+the `allowed-tools` frontmatter applies there. Both clients follow the same workflow and safety boundaries. The method is
 adapted from SimmerChan's Zhihu field-mapping case study
 (zhuanlan.zhihu.com/p/2052179994911171124). It generalizes that case: the graph
 algorithm is one thing, the platform it runs on is a swappable **provider**.
+
+## Resource paths
+
+Every `scripts/...`, `PLATFORMS.md`, `SOURCES.md` and `examples/...` path below is
+relative to the directory containing this `SKILL.md`, not the user's working
+directory. In Claude Code that directory is `${CLAUDE_SKILL_DIR}` (personal Skill
+or plugin); in Codex it is the loaded Skill directory (for example
+`~/.agents/skills/cyh-field-graph`). Invoke scripts by that absolute path and keep
+output files such as `seeds.txt` in the user's working directory.
 
 ## Core idea
 

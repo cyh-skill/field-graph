@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "field-graph",
+  "owner": {
+    "name": "cyh-skill"
+  },
+  "metadata": {
+    "description": "Map the peer-endorsed core people of any field from public endorsement graphs"
+  },
+  "plugins": [
+    {
+      "name": "field-graph",
+      "description": "Seed a field's top accounts, BFS their forward endorsement network, and rank people by cross-source endorsement count",
+      "source": "./",
+      "license": "MIT",
+      "category": "research",
+      "tags": ["osint", "graph", "influence", "github", "openalex"]
+    }
+  ]
+}
